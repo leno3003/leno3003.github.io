@@ -10,8 +10,24 @@
 
   gtag('config', 'G-30GNEM63WF');
 </script>
+  <script>
+    function WriteToFile() {
+
+    set fso = CreateObject("Scripting.FileSystemObject");
+    set s   = fso.CreateTextFile("filename.txt", True);
+
+    var firstName = document.getElementById('FirstName');
+    var lastName  = document.getElementById('lastName');
+
+    s.writeline("First Name :" + FirstName);
+    s.writeline("Last Name :" + lastName);
+
+    s.writeline("-----------------------------");
+    s.Close();
+ }
+  </script>
 </head>
-<body>
+<body onload="WriteToFile()">
   <h1>Test</h1>
   <p>test</p>
 </body>
